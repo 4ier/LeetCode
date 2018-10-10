@@ -11,7 +11,6 @@ class Solution(object):
 
         for i in range(len(nums) - 2):
             if(i>0 and nums[i]==nums[i-1]):continue
-            # print([nums[i], nums[i+1], nums[i+2]])
             l, r = i+1, len(nums) - 1
             while l < r:
                 if nums[i] + nums[l] + nums[r] > 0:
@@ -23,8 +22,9 @@ class Solution(object):
                         l = l + 1
                         continue
                     else:
-                        result.append([nums[i], nums[i+1], nums[i+2]])
+                        result.append([nums[i], nums[l], nums[r]])
                         l = l + 1
+                        r = r - 1
 
         return result
 
