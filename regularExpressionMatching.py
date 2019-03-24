@@ -5,17 +5,15 @@ class Solution(object):
         :type p: str
         :rtype: bool
         """
-        // TODO
-        
-
-
-def main():
-    sln = Solution()
-    # print(sln.isPalindrome(0))
-    print(sln.isPalindrome(10))
-    # print(sln.isPalindrome(9876789))
-    # print(sln.isPalindrome(98766))
-
-
-if __name__ == '__main__':
-    main()
+        if p.__contains__('*'):
+            return True
+        else:
+            index = 0
+            for i in range(len(s)):
+                j = i
+                index = i
+                while j < len(p) - 1 and (s[i] != p[j] or p[j] != '.'):
+                    j = j + 1
+                if j == len(p):
+                    break
+            return index == len(s) - 1
